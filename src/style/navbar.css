@@ -1,0 +1,391 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Header*/
+
+.header-div {
+    display: grid;
+    grid-template-columns: 15% 15% 40% 15% 15%;
+    grid-template-rows: 50% 50%;
+    padding: 0.5rem 1rem;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 3px 6px 0 rgba(36, 39, 44, 0.1);
+    z-index: 99;
+}
+
+/*logo with name*/
+
+.img-div {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+}
+
+
+.logo-img {
+    height: 4rem;
+    width: 6rem;
+    cursor: pointer;
+}
+
+
+.logo-name-a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+    /* width: auto; */
+    font-family: sans-serif;
+}
+
+
+/*welcome use*/
+.user-div {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    margin: auto 0;
+    text-align: end;
+}
+
+.user-div p {
+    margin: auto;
+    /* padding: auto; */
+    font-size: 1.2rem;
+    font-family: 'Lora', serif;
+    font-weight: 520;
+    font-family: 'Nanum Gothic', sans-serif;
+    margin-left: 50%;
+}
+
+
+/*search bar*/
+.search-div {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.fa-magnifying-glass {
+    color: rgb(0, 0, 0);
+    margin: auto;
+    padding: auto;
+    position: absolute;
+    right: 0.5rem;
+    top: 1rem;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+#search-bar {
+    height: 2.5rem;
+    /* width: 20rem; */
+    border: none;
+    border-radius: 1rem;
+    box-shadow: inset 0 0 1px 1px rgba(0, 0, 0, 0.595);
+    margin: auto 0;
+}
+
+
+.search-div input[type="text"] {
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    font-family: 'Ubuntu', sans-serif;
+    line-height: 0.5rem;
+}
+
+/*navbar*/
+.nav-div {
+    grid-row-start: 2;
+    grid-row-end: 3;
+    grid-column-start: 3;
+    grid-column-end: 4;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    width: 20rem;
+    margin: 0 auto;
+    height: 3rem;
+}
+
+.nav-div a {
+    text-decoration: none;
+    color: black;
+    font-size: 1.1rem;
+    font-family: 'Ubuntu', sans-serif;
+    transition: 0.2s ease;
+}
+
+
+.nav-div a:hover {
+    color: rgb(61, 151, 254);
+}
+
+.nav-div .active {
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+}
+
+/*logo-mode switch*/
+
+.mode-div {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    margin: auto 0;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 3rem;
+    height: 1.5rem;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 1.1rem;
+    width: 1.1rem;
+    left: 0.2rem;
+    bottom: 0.2rem;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(1.5rem);
+    -ms-transform: translateX(1.5rem);
+    transform: translateX(1.5rem);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+.light-mode-logo {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+
+.dark-mode-logo {
+    font-size: 1.2rem;
+    padding: 0.2rem;
+}
+
+
+
+/*buttons -login*/
+.btn-div {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 5;
+    grid-column-end: 6;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.btn {
+    font-family: 'Cabin', sans-serif;
+    font-size: 1rem;
+    border-radius: 1.5rem;
+    background: #074682;
+    color: white;
+    cursor: pointer;
+    padding: 0.6rem;
+}
+
+.btn:hover {
+    background: #6da0d1df;
+    color: black;
+}
+
+.btn i {
+    padding: 5px;
+}
+
+
+.cart-btn {
+    position: relative;
+}
+
+.badge-cart {
+    background: red;
+    height: 1rem;
+    width: 1rem;
+    border-radius: 1rem;
+    position: absolute;
+    right: -0.2rem;
+    top: -0.2rem;
+    color: beige;
+    font-size: 0.7rem;
+}
+
+.profile-div {
+    display: none;
+}
+
+@media screen and (max-width:450px) {
+    .header-div {
+        height: 24vmin;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr;
+        position: relative;
+        position: sticky;
+        z-index: 99;
+    }
+
+    .img-div {
+        grid-column-start: 1;
+        grid-column-end: 2;
+    }
+
+
+    .logo-img {
+        height: 18vmin;
+        width: 26vmin;
+        padding: 0.5vmin;
+    }
+
+    .logo-name-a {
+        display: none;
+    }
+
+    .search-div {
+        grid-column-start: 2;
+        grid-column-end: 3;
+        z-index: 1;
+    }
+
+    .search-div::after {
+        content: 'Farm Saathi';
+        padding: 1vmin;
+        font-size: 6vmin;
+        font-weight: 700;
+    }
+
+    #search-bar {
+        position: absolute;
+        top: 120%;
+        right: -30%;
+        left: -40%;
+        font-size: 4vmin;
+        padding: 2vmin 3vmin;
+        height: 10vmin;
+    }
+
+    .search-div .fa-magnifying-glass {
+        position: absolute;
+        top: 130%;
+        right: -25%;
+    }
+
+
+    .profile-div {
+        grid-column-start: 3;
+        grid-column-end: 4;
+        display: block;
+        margin: auto;
+    }
+
+    .profile-div .profile-bar {
+        font-size: 4vmin;
+        font-weight: 500;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 3vmin;
+    }
+
+    .profile-div .profile-icon {
+        font-size: 6vmin;
+    }
+
+    .btn-div {
+        position: absolute;
+        font-size: 4vmin;
+        padding: 3vmin 0vmin;
+        right: 0;
+        top: 100%;
+        width: 100%;
+        justify-content: space-between;
+        background-color: rgba(236, 232, 225, 0.651);
+    }
+    .btn-div span{
+        display: none;
+    }
+    .btn-div .btn{
+        margin:0 2.5vmin;
+        height: 12vmin;
+        width: 12vmin;
+    }
+    .btn-div .fa-solid{
+        margin: 0;
+        padding: 0;
+        font-size: 5vmin;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1vmin;
+    }
+
+    .user-div,
+    .nav-div,
+    .mode-div {
+        display: none;
+    }
+
+}

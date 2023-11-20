@@ -1,0 +1,36 @@
+.cards {
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
+    position: relative;
+    
+}
+.prods{
+    display: flex;
+}
+.heading{
+
+    text-decoration: underline;
+    text-underline-offset: 0.3rem;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+.disclaim-prod{
+    margin-top: 2rem;
+    text-align: center;
+    
+}
+
+@media screen and (max-width:450px) {
+
+    .prods{
+        flex-direction: column;
+    }
+    .disclaim-prod{
+        margin: 0;
+        padding: 0 5vmin;
+    }
+    .heading{
+        font-size: 6vmin;
+    }
+}

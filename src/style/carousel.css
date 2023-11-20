@@ -1,0 +1,50 @@
+.carousel {
+    width: 85%;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.carousel-inner .carousel-item img {
+    cursor: pointer;
+    height: 30rem;
+    width: 100%;
+    object-fit: cover;
+}
+
+.carousel-inner .carousel-item {
+    padding: 10px;
+    border: 3px solid rgba(0, 0, 0, 0.659);
+}
+
+
+#carouselExampleIndicators h1 {
+    text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+#carouselExampleIndicators .carousel-control-prev .carousel-control-prev-icon {
+    padding: 1px;
+    border-radius: 20px;
+}
+
+#carouselExampleIndicators .carousel-control-next .carousel-control-next-icon {
+    padding: 1px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width:450px) {
+    .carousel {
+        margin-top: 20vmin;
+        width: 95%;
+    }
+    .carousel-inner .carousel-item img {
+        object-fit: cover;
+        height: 40vmin;
+    }
+    .carousel-inner .carousel-item {
+        padding: 1vmin;
+    }
+    
+}

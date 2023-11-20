@@ -1,0 +1,120 @@
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"] {
+    padding: 8px;
+}
+
+textarea {
+    padding: 8px;
+}
+
+
+/*---------------------*/
+.main-div-call{
+    width: 95%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+
+.main-cnt {
+    padding: 3rem;
+    width: 60%;
+    margin: auto;
+    display: flex;
+    border: 3px solid black;
+    padding: 4vmin;
+}
+
+.main-cnt h3 {
+    font-size: 25px;
+
+}
+
+.main-cnt i {
+
+    margin: 10px 0px;
+    margin-right: 10px;
+}
+
+.call-area {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 60px;
+}
+
+.call-area .part {
+    margin-bottom: 20px;
+}
+
+.form-div {
+    width: 70%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-div h3 {
+    font-size: 28px;
+}
+
+
+.form-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-block .box {
+    width: 50%;
+    margin: 10px 0px;
+    margin-bottom: 20px;
+    border: 0px;
+    border-bottom: 2px solid black;
+    font-size: 15px;
+}
+
+.form-block .btn {
+    background-color: #0d3b66;
+    color: white;
+    width: 50%;
+}
+.form-block .btn:hover{
+    background-color: #5c9ad5;
+    color: rgb(0, 0, 0);
+}
+
+.alert{
+    border: 2px solid black;
+    position: absolute;
+    text-align: center;
+    width: 500px;
+    height: 40px;
+    top: 160px;
+    padding: 5px 10px;
+    margin: 5px auto;
+}
+
+.heading-main{
+    text-decoration: underline;
+    font-size:2rem;
+}
+
+@media screen and(max-width:450px){
+    .main-div-call{
+        display: none;
+    }
+    .main-cnt{
+        display: none;
+    }
+}

@@ -1,0 +1,124 @@
+.card {
+    height: 31rem;
+    width: 16rem;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 4fr 4fr 3fr 3fr;
+}
+
+.select {
+    display: flex;
+    justify-content: space-around;
+    height: 80px;
+    /* padding: px; */
+}
+
+.select .quant {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.quant p {
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    font-size: 14px;
+}
+
+.select .quant select {
+    width: 60px;
+    padding: 5px;
+    /* font-size: 10px; */
+
+}
+
+.select .quant select option {
+    font-size: 15px;
+}
+
+.card-body .btn {
+    margin: auto;
+    padding: auto;
+    background-color: #0b4e8c;
+}
+
+.price {
+    height: auto;
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.price p {
+    margin: auto;
+    margin-top: 5px;
+    text-align: center;
+}
+
+.price p span {
+    font-size: 10px;
+}
+
+.price .btn {
+    font-size: 15px;
+    text-align: center;
+    border: none;
+}
+
+.price .btn:hover {
+    background-color: #448acb;
+    color: black;
+}
+
+.card-text {
+    max-height: 6rem;
+    overflow-y: auto;
+}
+
+.card img {
+    height: 10rem;
+    width: 100%;
+    object-fit: cover;
+    /* object-fit: fill; */
+    object-position: center;
+    padding: 2px;
+    margin: auto;
+}
+
+#desc-text::-webkit-scrollbar {
+    width: 10px;
+}
+
+#desc-text::-webkit-scrollbar-track {
+    border-radius: 8px;
+    background-color: #e7e7e7;
+    border: 1px solid #cacaca;
+}
+
+#desc-text::-webkit-scrollbar-thumb {
+    border-radius: 8px;
+    background-color: #0d3b66;
+}
+
+.hr {
+    margin: 0;
+    margin-top: 0.3rem;
+}
+
+
+
+@media screen and (max-width:450px) {
+    .card {
+        height: 31rem;
+        width: 16rem;
+        margin: auto;
+        display: grid;
+        grid-template-rows: 4fr 4fr 3fr 3fr;
+        margin-bottom: 6vmin;
+    }
+}

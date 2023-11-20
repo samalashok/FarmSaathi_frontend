@@ -1,0 +1,77 @@
+
+
+#success_message {
+    display: none;
+}
+
+.container{
+    margin:50px auto;
+    display: flex;
+    justify-content: center;
+}
+
+.well{
+    border: 2px solid rgba(0, 0, 0, 0.601);
+    border-radius: 5px;
+    width: 70%;
+    background: white;
+}
+
+.well legend{
+    text-align: center;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.well .form-group{
+    margin: 20px auto;
+}
+
+.well .form-group .input-group ::placeholder{
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    color: rgba(19, 18, 18, 0.703);
+}
+.well .form-group input{
+    width: 280px;
+    /* border: 1px solid rgba(22, 22, 129, 0.789); */
+}
+
+.well .form-group input[type="radio"]{
+    width: auto;
+}
+
+
+.well .form-group label{
+    /* font-family: 'Ubuntu', sans-serif; */
+    font-size: 16px;
+}
+
+.well .form-group #radio{
+    display: flex;
+}
+
+.well .form-group .radio{
+    margin-right:10px ;
+    margin-left:10px ;
+}
+
+.well .form-group .radio label{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.well .form-group .input-group .input-group-addon{
+    background: rgba(22, 22, 129, 0.789);
+    border: 1px solid rgba(22, 22, 129, 0.789);
+}
+
+
+.well .form-group .input-group .input-group-addon i{
+    color: rgb(255, 255, 255);
+}
+
+.well #btn{
+    text-align: center;
+}

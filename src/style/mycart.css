@@ -1,0 +1,161 @@
+/* mycart + iteminfo css */
+
+.p-details img {
+  height: 6rem;
+  width: 7.5rem;
+  object-fit: cover;
+}
+
+.heading-name {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+}
+
+hr {
+  margin: 0.2rem;
+}
+
+.shopping-cart-main {
+  width: 90%;
+  margin: auto;
+  /* padding: 0.5rem; */
+  display: flex;
+  /* justify-content:space-between; */
+  margin-top: 1.5rem;
+  /* border: 0.1rem solid grey; */
+  min-height: 40rem;
+}
+
+.cart-main {
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 5px 15px;
+  background: #f2f2f2;
+  padding: 0.8rem;
+  width: 75%;
+  /* margin: auto; */
+}
+
+.summary-main {
+  width: 20%;
+  padding: 0.5rem;
+  height: 23rem;
+  background: #cecccc;
+  margin: 0 auto;
+  position: fixed;
+  right: 5%;
+}
+
+.date-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-in {
+  border: 0.1rem solid rgb(197, 189, 189);
+  border-radius: 0.4rem;
+  background: none;
+  width: 6rem;
+  padding: 0.2rem;
+  font-size: 0.8rem;
+  margin-left: 0.3rem;
+}
+
+
+/*increment-decrement*/
+/* Google fonts import link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.s-wrapper {
+  height: 2rem;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #FFF;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.s-wrapper span {
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.s-wrapper span.num {
+  font-size: 1rem;
+  border-right: 2px solid rgba(0, 0, 0, 0.2);
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+}
+
+.delete-item {
+  font-size: 0.8rem;
+  width: auto;
+  padding: 0.2rem;
+  margin-top: 0.3rem;
+}
+
+.date-diff {
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+.empty-cart {
+  text-align: center;
+}
+
+.empty-cart p {
+  font-size: 1.5rem;
+}
+
+.cart-img-empty {
+  width: 30rem;
+  height: 30rem;
+  /* align-items: center; */
+  margin: auto;
+}
+
+.heading-name-summ {
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.heading-name-inner {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem;
+  margin: 0.8rem 0.2rem;
+  align-items: center;
+}
+
+.heading-name-inner h5 {
+  font-weight: 430;
+  font-size: 1rem;
+}
+
+.heading-name-summ h4 {
+  font-weight: 530;
+  font-size: 1.2rem;
+}
+.heading-name-summ h6 {
+  font-family: 'Abel', sans-serif;
+}
+
+.summary-main .btn {
+  margin: 1rem auto;
+  display: block;
+  width: 70%;
+  font-size: 1rem;
+}

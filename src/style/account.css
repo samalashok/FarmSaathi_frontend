@@ -1,0 +1,80 @@
+.account-main {
+    /* height: 60rem; */
+    width: 85%;
+    margin: 2rem auto;
+    position: relative;
+}
+
+.account-main .user-details-main {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+.account-main .chng-pass {
+    position: absolute;
+    top: 5.5rem;
+    left: 30%;
+}
+
+.profile-main p {
+    font-size: 1rem;
+    margin: 0.8rem 0;
+}
+
+.profile-main span {
+    font-size: 1rem;
+    margin: 0 0.8rem;
+}
+
+.account-main .order-details-main {
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
+    margin: 2rem 0;
+}
+
+.order-table {
+    /* border-collapse: collapse; */
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    width: 100%;
+    /* margin: 0.6rem 0; */
+}
+
+.order-table td {
+    padding: 0.4rem;
+}
+
+.order-table th {
+    padding: 0.4rem 0;
+    text-decoration: underline;
+    text-underline-offset: 0.2rem;
+    border-spacing: 4rem 4rem;
+    /* border: 3px solid red; */
+}
+
+.order-table tbody {
+    margin: 1rem;
+}
+
+/* ordercard css */
+.order-card-main {
+    background-color: azure;
+}
+
+.fa-chevron-down,
+.fa-chevron-up {
+    cursor: pointer;
+}
+
+.more-items {
+    text-decoration: underline;
+    text-underline-offset: 0.1rem;
+    text-decoration-thickness: 0.04rem;
+    cursor: pointer;
+}
+
+.details-div-main{
+    transition: all 1s ease-in-out;
+}
