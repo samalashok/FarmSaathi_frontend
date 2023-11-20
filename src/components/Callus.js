@@ -14,13 +14,13 @@ export default function Callus() {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (localStorage.getItem('authToken')) {
-            axios.post('http://localhost:5000/api/contactUs', { ...contact, name: localStorage.getItem('name'), email: localStorage.getItem('email') }).then(res => {
+            axios.post('https://farm-saathi-backend.vercel.app/api/contactUs', { ...contact, name: localStorage.getItem('name'), email: localStorage.getItem('email') }).then(res => {
                 alert(res.data.msg);
                 setContact({ name: "", email: "", phone: "", msg: "" })
             }).catch(err => { alert(err) })
         }
         else {
-            axios.post('http://localhost:5000/api/contactUs', { ...contact }).then(res => {
+            axios.post('https://farm-saathi-backend.vercel.app/api/contactUs', { ...contact }).then(res => {
                 alert(res.data.msg);
                 setContact({ name: "", email: "", phone: "", msg: "" })
             }).catch(err => { alert(err) })

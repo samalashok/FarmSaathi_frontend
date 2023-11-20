@@ -15,7 +15,7 @@ export default function Login() {
     }
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await axios.post('http://localhost:5000/api/loginUser', {
+        await axios.post('https://farm-saathi-backend.vercel.app/api/loginUser', {
             email: userDetails.email, password: userDetails.password
         }).then((res) => {
             alert(res.data.msg);
@@ -26,7 +26,7 @@ export default function Login() {
                 localStorage.setItem('email', res.data.email);
                 localStorage.setItem('phone', res.data.phone);
                 localStorage.setItem('carts', JSON.stringify([]));
-                axios.post('http://localhost:5000/api/getCartData', { email: localStorage.getItem('email') }).then(response => {
+                axios.post('https://farm-saathi-backend.vercel.app/api/getCartData', { email: localStorage.getItem('email') }).then(response => {
                     localStorage.setItem('carts', JSON.stringify(response.data[0].data));
                     handleSetData({ data: response.data[0].data });
                 }).catch(err => (err))

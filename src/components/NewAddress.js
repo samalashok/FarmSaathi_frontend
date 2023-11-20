@@ -8,7 +8,7 @@ export default function NewAddress() {
     }
     const handleSubmit = (e) => {
         e.preventDefault();
-        axios.post('http://localhost:5000/api/setAddress', { ...address, email: localStorage.getItem('email') }).then(res => {
+        axios.post('https://farm-saathi-backend.vercel.app/api/setAddress', { ...address, email: localStorage.getItem('email') }).then(res => {
             window.location.reload(false);
         }).catch(err => console.log(err));
     }

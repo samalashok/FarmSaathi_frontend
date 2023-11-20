@@ -102,8 +102,14 @@ hr {
 .delete-item {
   font-size: 0.8rem;
   width: auto;
-  padding: 0.2rem;
+  padding: 0.45rem;
   margin-top: 0.3rem;
+  background-color: #eb4b4b;
+  /* color:black; */
+}
+.delete-item:hover{
+  background-color: #e62323;
+  color: white;
 }
 
 .date-diff {

@@ -22,7 +22,7 @@ export default function App() {
       <div className='main-div-app'>
         <BrowserRouter>
             <Navbar />
-            <Link title='Help & Support' to='/support' className="fa-solid fa-headset"></Link>
+            <Link title='Help & Support' className="fa-headset-main" to='/support'><i className="fa-solid fa-headset"></i></Link>
             <Routes>
               <Route path='/' element={
                 <>

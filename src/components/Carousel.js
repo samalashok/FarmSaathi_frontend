@@ -5,7 +5,7 @@ import axios from 'axios';
 export default function Carousel() {
     const [images, setImages] = useState([]);
     useEffect(() => {
-        axios.get('http://localhost:5000/api/getImages').then(result => setImages(result.data)).catch(error => error)
+        axios.get('https://farm-saathi-backend.vercel.app/api/getImages').then(result => setImages(result.data)).catch(error => error)
     }, []);
     let i = 0;
     return (

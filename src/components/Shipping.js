@@ -12,7 +12,7 @@ export default function Shipping() {
     const { handleSetData, handleAddress } = useContext(UpdateContext)
     useEffect(() => {
         handleSetData({ data: JSON.parse(localStorage.getItem('carts')) });
-        axios.post('http://localhost:5000/api/getAddress', {
+        axios.post('https://farm-saathi-backend.vercel.app/api/getAddress', {
             email: localStorage.getItem('email')
         }).then((response) => {
             handleAddress(response.data)

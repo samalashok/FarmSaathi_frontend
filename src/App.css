@@ -55,18 +55,23 @@ body::-webkit-scrollbar-thumb {
   color: #0b69c1;
 }
 
-.fa-headset{
+.fa-headset-main{
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-size: 5vmin;
+  font-size: 2rem;
+  height: 4rem;
+  width: 4rem;
   position: absolute;
   right: 0;
   top: 40%;
   background-color: #0d3b66;
-  border-radius: 2vmin 0 0 2vmin;
-  padding: 2vmin 4vmin;
+  border-radius: 1rem 0 0 1rem;
+  padding: 1rem 2rem;
   position: fixed;
   z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .fa-headset:hover{
   background-color: #558ec4;

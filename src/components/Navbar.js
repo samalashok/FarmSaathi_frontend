@@ -16,7 +16,7 @@ export default function Navbar(props) {
         window.location.reload(false);
     }
     function storeDataToDB() {
-        axios.post('http://localhost:5000/api/addCartToDB', { email: localStorage.getItem('email'), data: carts })
+        axios.post('https://farm-saathi-backend.vercel.app/api/addCartToDB', { email: localStorage.getItem('email'), data: carts })
             .then().catch(err => console.error(err));
     }
     // setTimeout(() => {

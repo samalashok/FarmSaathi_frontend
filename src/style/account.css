@@ -34,6 +34,14 @@
     margin: 2rem 0;
 }
 
+.chng-pass {
+    background-color:#ffc107;
+    color: black;
+}
+.chng-pass:hover {
+    background-color:#fbcc41;
+}
+
 .order-table {
     /* border-collapse: collapse; */
     border-collapse: separate;
@@ -75,6 +83,6 @@
     cursor: pointer;
 }
 
-.details-div-main{
+.details-div-main {
     transition: all 1s ease-in-out;
 }

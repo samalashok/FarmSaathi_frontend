@@ -33,7 +33,7 @@ export default function Summary(props) {
             const phone = localStorage.getItem('phone')
             // console.log(sumObj.subTotal)
             const rand = await axios.get('https://www.random.org/strings/?num=1&len=20&digits=on&upperalpha=on&loweralpha=on&unique=on&format=plain&rnd=new').then(({ data }) => data).catch(err => err)
-            const order = await axios.post('http://localhost:5000/checkout/createOrder', {
+            const order = await axios.post('https://farm-saathi-backend.vercel.app/checkout/createOrder', {
                 amount: parseFloat(sumObj.subTotal), receipt: `FS${name.substring(0, 3)}${email.substring(0, 3)}${rand}`
             }).then((result) => result.data.order).catch(err => console.log(err))
             // console.log(order)
@@ -54,15 +54,15 @@ export default function Summary(props) {
                             signature: response.razorpay_signature,
                             amount: parseInt(order.amount)
                         }
-                        await axios.post('http://localhost:5000/checkout/storeOrder', {
+                        await axios.post('https://farm-saathi-backend.vercel.app/checkout/storeOrder', {
                             email: email,
                             order_details: order,
                             cart_details: cartData,
                             status: "success",
                             address_details: addressData
                         })
-                        await axios.post('http://localhost:5000/checkout/storePayment', { ...paymetDetails, email: email })
-                        await axios.post('http://localhost:5000/api/deleteCartData', { email: email })
+                        await axios.post('https://farm-saathi-backend.vercel.app/checkout/storePayment', { ...paymetDetails, email: email })
+                        await axios.post('https://farm-saathi-backend.vercel.app/api/deleteCartData', { email: email })
                         localStorage.setItem('carts', JSON.stringify([]))
                         localStorage.setItem('address', JSON.stringify({}))
                         nav('/')
@@ -84,7 +84,7 @@ export default function Summary(props) {
                 const rpay = window.Razorpay(options);
                 rpay.open();
                 rpay.on('payment.failed', function (response) {
-                    axios.post('http://localhost:5000/checkout/storeOrder', {
+                    axios.post('https://farm-saathi-backend.vercel.app/checkout/storeOrder', {
                         email: email,
                         order_details: order,
                         cart_details: cartData,

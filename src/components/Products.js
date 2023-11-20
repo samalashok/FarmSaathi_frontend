@@ -7,7 +7,7 @@ import '../style/products.css'
 export default function Products() {
     const [products, setProducts] = useState([])
     useEffect(() => {
-        axios.get('http://localhost:5000/api/getProducts').then((products) => {
+        axios.get('https://farm-saathi-backend.vercel.app/api/getProducts').then((products) => {
             setProducts(products.data)
         }).catch((err) => (err))
     }, [])

@@ -13,13 +13,13 @@ export default function Signup() {
     const nav = useNavigate()
     const handleSubmit = async (e) => {
         e.preventDefault();
-        // const res = await fetch("http://localhost:5000/api/createUser", {
+        // const res = await fetch("https://farm-saathi-backend.vercel.app/api/createUser", {
         //     method: "POST",
         //     headers: { 'Content-Type': 'application/json' },
         //     body: JSON.stringify({ name: userDetails.name, email: userDetails.email, password: userDetails.password, repassword: userDetails.repassword })
         // })
         // const json = await res.json();
-        await axios.post('http://localhost:5000/api/createUser', {
+        await axios.post('https://farm-saathi-backend.vercel.app/api/createUser', {
             name: userDetails.name, email: userDetails.email, phone: userDetails.phone, password: userDetails.password
         }).then((res) => {
             alert(res.data.msg);

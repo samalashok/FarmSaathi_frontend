@@ -13,12 +13,12 @@ export default function Account() {
             navigate('/login')
         }
         else {
-            axios.post('http://localhost:5000/account/getOrders', { email: localStorage.getItem('email') }).then((res) => {
+            axios.post('https://farm-saathi-backend.vercel.app/account/getOrders', { email: localStorage.getItem('email') }).then((res) => {
                 const arr = res.data;
                 arr.sort((a, b) => a.date > b.date ? -1 : 1);
                 setOrders(arr);
             }).catch(err => console.log(err))
-            // axios.post('http://localhost:5000/account/getPayments', { email: localStorage.getItem('email') }).then((res) => {
+            // axios.post('https://farm-saathi-backend.vercel.app/account/getPayments', { email: localStorage.getItem('email') }).then((res) => {
             //     const arr = res.data;
             //     arr.sort((a, b) => a.date > b.date ? -1 : 1);
             //     setPayments(arr);
