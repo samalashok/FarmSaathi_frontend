@@ -3,8 +3,6 @@ import '../style/order.css'
 export default function OrderDetails({ or }) {
   //progress bar logic
   const today = new Date();
-  const delday = new Date(or.delDate)
-  const retday = new Date(or.retDate)
   const datediff = parseInt((new Date(or.delDate) - new Date()) / (1000 * 60 * 60 * 24))
   let prog={width:"8%"}
   console.log(datediff)
