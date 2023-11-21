@@ -1,0 +1,117 @@
+.order-card-main {
+    background-color: rgb(233, 242, 242);
+}
+
+.fa-chevron-down,
+.fa-chevron-up {
+    cursor: pointer;
+}
+
+.more-items {
+    text-decoration: underline;
+    text-underline-offset: 0.1rem;
+    text-decoration-thickness: 0.04rem;
+    cursor: pointer;
+}
+
+.details-div-main {
+    transition: all 1s ease-in-out;
+    position: relative;
+}
+
+.reciept-div {
+    width: 70%;
+    margin: 0 auto;
+    background-color: rgb(246, 247, 250);
+    border: 0.1rem solid rgb(149, 149, 149);
+    border-radius: 1rem;
+    padding: 1rem;
+    /* color: white; */
+}
+.receipt-det{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+
+.reciept-div .item-wise {
+    border: 0.1rem solid rgb(218, 215, 215);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin: 0.8rem 0;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 0.5fr 0.5fr 0.5fr;
+}
+
+.img-name {
+    grid-row-start: 1;
+    grid-row-end: 3;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.item-name {
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.track-name {
+    grid-row-start: 3;
+    grid-row-end: 4;
+    grid-column-start: 1;
+    grid-column-end: 2;
+    padding: 0 0.5rem;
+    font-size: 0.9rem;
+}
+
+.prog-name-bar {
+    grid-row-start: 2;
+    grid-row-end: 4;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.progress {
+    background-color: #9d9b9b;
+    height: 0.3rem;
+}
+
+.progress-bar {
+    background-color: #b34e98;
+}
+.progress-name{
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.8rem;
+}
+.pay-det{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 0.5fr 3fr ;
+}
+.pay-det .pay-head{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    font-weight: 500;
+}
+.pay-det .pay-det-one{
+    display: flex;
+    flex-direction: column;
+    font-size: 0.95rem;
+    font-weight: 400;
+    margin: 0.5rem 0;
+}

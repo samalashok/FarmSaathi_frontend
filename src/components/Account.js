@@ -7,7 +7,7 @@ import axios from 'axios';
 export default function Account() {
     const navigate = useNavigate();
     const [orders, setOrders] = useState([]);
-    // const [payments, setPayments] = useState([]);
+    const [payments, setPayments] = useState([]);
     useEffect(() => {
         if (!localStorage.getItem('authToken')) {
             navigate('/login')
@@ -18,11 +18,11 @@ export default function Account() {
                 arr.sort((a, b) => a.date > b.date ? -1 : 1);
                 setOrders(arr);
             }).catch(err => console.log(err))
-            // axios.post('https://farm-saathi-backend.vercel.app/account/getPayments', { email: localStorage.getItem('email') }).then((res) => {
-            //     const arr = res.data;
-            //     arr.sort((a, b) => a.date > b.date ? -1 : 1);
-            //     setPayments(arr);
-            // }).catch(err => console.log(err))
+            axios.post('https://farm-saathi-backend.vercel.app/account/getPayments', { email: localStorage.getItem('email') }).then((res) => {
+                const arr = res.data;
+                arr.sort((a, b) => a.date > b.date ? -1 : 1);
+                setPayments(arr);
+            }).catch(err => console.log(err))
         }
         // eslint-disable-next-line
     }, [])
@@ -46,25 +46,24 @@ export default function Account() {
                     <thead>
                         <tr>
                             <th scope="col">Order id</th>
+                            <th scope="col">Date: </th>
                             <th scope="col">Items</th>
                             <th scope="col">Price </th>
                             <th scope="col">Payment Status</th>
-                            <th scope="col">Delivery Status</th>
                         </tr>
                     </thead>
                     <tbody className="table-group-divide">
                         {
                             orders.map((order, i) => {
-                                return <OrderCard data={
-                                    {
-                                        id: order.order_details.id,
-                                        img: order.cart_details[0].img,
-                                        items: order.cart_details.length,
-                                        price: order.order_details.amount,
-                                        status: order.status,
-                                        date: order.date
-                                    }
-                                } key={i}
+                                return <OrderCard data={{
+                                    id: order.order_details.id,
+                                    img: order.cart_details[0].img,
+                                    items: order.cart_details.length,
+                                    price: order.order_details.amount,
+                                    status: order.status,
+                                    date: order.date
+                                }} order={order}
+                                    payment={payments} key={i}
                                 />
                             })
                         }

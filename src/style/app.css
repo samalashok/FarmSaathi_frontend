@@ -73,7 +73,7 @@ body::-webkit-scrollbar-thumb {
   justify-content: center;
   align-items: center;
 }
-.fa-headset:hover{
-  background-color: #558ec4;
-  color: rgb(0, 0, 0);
+.fa-headset-main:hover{
+  /* background-color: #558ec4; */
+  color: rgb(181, 172, 172);
 }

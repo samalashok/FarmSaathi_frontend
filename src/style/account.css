@@ -65,24 +65,3 @@
 .order-table tbody {
     margin: 1rem;
 }
-
-/* ordercard css */
-.order-card-main {
-    background-color: azure;
-}
-
-.fa-chevron-down,
-.fa-chevron-up {
-    cursor: pointer;
-}
-
-.more-items {
-    text-decoration: underline;
-    text-underline-offset: 0.1rem;
-    text-decoration-thickness: 0.04rem;
-    cursor: pointer;
-}
-
-.details-div-main {
-    transition: all 1s ease-in-out;
-}
