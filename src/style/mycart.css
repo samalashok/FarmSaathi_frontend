@@ -41,8 +41,8 @@ hr {
   height: 23rem;
   background: #cecccc;
   margin: 0 auto;
-  position: fixed;
-  right: 5%;
+  /* position: fixed;
+  right: 5%; */
 }
 
 .date-div {

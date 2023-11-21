@@ -137,32 +137,8 @@ form .btn {
     position: relative;
     overflow: hidden;
 }
-
-form .btn .btn-layer {
-    height: 100%;
-    width: 40%;
-    position: absolute;
-    border-radius: 2px;
-    transition: all 0.4s ease;
-}
-
-form .btn input[type="submit"] {
-    height: 100%;
-    width: 50%;
-    z-index: 1;
-    position: relative;
-    background: #0d3b66;
-    border: none;
-    color: #fff;
-    padding-left: 0;
-    font-size: 18px;
-    font-weight: 400;
-    cursor: pointer;
-}
-
-form .btn input[type="submit"]:hover {
-    background: #6da0d1df;
-    color: black;
+form .btn:hover{
+    background-color:#1964ab;
 }
 
 .form-inner .pass-field {

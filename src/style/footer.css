@@ -49,6 +49,16 @@
 
 .footer .foot-cnt #part-4 a {
     border: none;
+    height: 2.5rem;
+    width: 2.5rem;
+    padding: auto;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer .foot-cnt #part-4 .icons{
+    display: flex;
 }
 
 .footer .cright {

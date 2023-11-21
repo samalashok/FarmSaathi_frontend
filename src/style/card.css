@@ -1,7 +1,7 @@
 .card {
     height: 31rem;
     width: 16rem;
-    margin: auto;
+    margin: 1.5rem auto;
     display: grid;
     grid-template-rows: 4fr 4fr 3fr 3fr;
 }
@@ -71,7 +71,7 @@
 }
 
 .price .btn:hover {
-    background-color: #448acb;
+    background-color: #448acb !important;
     color: black;
 }
 

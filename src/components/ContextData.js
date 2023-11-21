@@ -66,9 +66,21 @@ export default function ContextData(props) {
     const handleAddress = (data) => {
         setAddress(data)
     }
+
+    const [mode, setMode] = useState(false)
+    const handleMode = () => {
+        console.log("changed")
+        setMode(d => !d)
+    }
+
+    const listItem = ['Tractor', 'Power Tiller', 'Harvester', 'Sprayer', 'Mulcher', 'Fertilizer', 'Harrow', 'Plough', 'Seedre', 'Trailor']
+    const [searchText, setSearchText] = useState()
+    const handleSearch = (text) => {
+        setSearchText(text)
+    }
     return (
-        <Context.Provider value={{ carts, address }} >
-            <UpdateContext.Provider value={{ handleAdd, handleDelete, handleUpdate, handleSetData, handleAddress }}>
+        <Context.Provider value={{ carts, address, mode, searchText ,listItem}} >
+            <UpdateContext.Provider value={{ handleAdd, handleDelete, handleUpdate, handleSetData, handleAddress, handleMode, handleSearch }}>
                 {props.children}
             </UpdateContext.Provider>
         </Context.Provider>

@@ -1,11 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../style/mycart.css'
-import {UpdateContext } from './ContextData'
+import { Context, UpdateContext } from './ContextData'
 import ItemInfo from './ItemInfo';
 import Summary from './Summary';
 
 
 export default function Mycart() {
+    const { mode } = useContext(Context)
 
     const cartData = JSON.parse(localStorage.getItem('carts'))
 
@@ -21,11 +22,12 @@ export default function Mycart() {
         handleSetData({ data: JSON.parse(localStorage.getItem('carts')) });
         // eslint-disable-next-line
     }, []);
+    const dark = "#202124"
+    const light = "#cccccc"
 
-    
     return (
         <div className='shopping-cart-main'>
-            < div className='cart-main' >
+            < div className='cart-main' style={{ backgroundColor: mode && light, color: mode && dark }}>
                 <div className="heading-name">
                     <h2>Shopping Cart</h2>
                     <h2>{count} Items</h2>
@@ -70,7 +72,7 @@ export default function Mycart() {
                     </div>
                 }
             </div >
-            <Summary title="Checkout"/>
+            <Summary title="Checkout" />
         </div >
     )
 }

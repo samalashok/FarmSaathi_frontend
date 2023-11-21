@@ -1,9 +1,14 @@
 import React, { useState, useContext } from 'react'
 import '../style/card.css'
 import { Link, useNavigate } from 'react-router-dom'
-import { UpdateContext } from './ContextData';
+import { Context, UpdateContext } from './ContextData';
 
 export default function Card(props) {
+    // const dark = "#202124"
+    // const dark = "#616161"
+    const light = "#cccccc"
+    // const light = "#bfbfbf"
+    const { mode } = useContext(Context)
     //date logic
     const curr = new Date();
     const delDay = 5;
@@ -39,16 +44,16 @@ export default function Card(props) {
 
 
     return (
-        <div className="card">
+        <div className="card" style={{ backgroundColor: mode && light, color: mode && "#212121" }}>
             <img className="card-img-top" src={props.img} alt="" />
             <div className="card-body d-inline">
                 <h5 className="card-title">{props.name}</h5>
                 <p className="card-text" id='desc-text'>{props.desc}</p>
             </div>
-            <div className="select">
+            <div className="select" style={{ backgroundColor: mode &&light, color: mode && "#212121" }}>
                 <div className="quant">
                     <p>Quantity: </p>
-                    <select className="form-select" aria-label="Default select example" onChange={(e) => { setItem(e.target.value) }}
+                    <select className="form-select" style={{ backgroundColor: mode && light, color: mode && "#212121" }} aria-label="Default select example" onChange={(e) => { setItem(e.target.value) }}
                         defaultValue={item}>
                         {
                             option.map((op, id) => <option key={id} value={op} >{op}</option>)
@@ -57,7 +62,7 @@ export default function Card(props) {
                 </div>
                 <div className="quant">
                     <p>No of Days: </p>
-                    <select className="form-select" aria-label="Default select example" onChange={(e) => { setDays(e.target.value) }}
+                    <select className="form-select" aria-label="Default select example" style={{ backgroundColor: mode && light, color: mode && "#212121" }} onChange={(e) => { setDays(e.target.value) }}
                         defaultValue={days}>
                         {
                             option.map((op, id) => <option key={id} value={op} >{op}</option>)
@@ -67,9 +72,9 @@ export default function Card(props) {
                 <hr className='hr'></hr>
             </div>
             <div className="price">
-                {cartData.find(item => item.id === props.id) ? <Link to='/cart' style={{ backgroundColor: '#4b9bc4' }} className="btn btn-primary">Go to cart</Link> : <Link to='/' onClick={onclick} className="btn btn-primary">Add to Cart</Link>}
+                {cartData.find(item => item.id === props.id) ? <Link to='/cart' style={{ backgroundColor: mode && "#2d4f73", color: mode && light }} className="btn btn-primary">Go to cart</Link> : <Link to='/' onClick={onclick} className="btn btn-primary" style={{ backgroundColor: mode && "#2d4f73", color: mode && light }}> Add to Cart</Link>}
                 <p>Total Price:{total} <span>({props.price}/day)</span></p>
             </div>
-        </div>
+        </div >
     )
 }

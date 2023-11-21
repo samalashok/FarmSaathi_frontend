@@ -3,10 +3,12 @@
     margin: auto;
     margin-top: 2rem;
     position: relative;
-    
+    min-height: 20rem;
 }
 .prods{
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .heading{
 

@@ -13,7 +13,7 @@
 
 .carousel-inner .carousel-item {
     padding: 10px;
-    border: 3px solid rgba(0, 0, 0, 0.659);
+    border: 0.15rem solid rgba(0, 0, 0, 0.659);
 }
 
 

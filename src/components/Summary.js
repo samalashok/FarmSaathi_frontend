@@ -65,8 +65,7 @@ export default function Summary(props) {
                         await axios.post('https://farm-saathi-backend.vercel.app/api/deleteCartData', { email: email })
                         localStorage.setItem('carts', JSON.stringify([]))
                         localStorage.setItem('address', JSON.stringify({}))
-                        nav('/')
-                        window.location.reload(false)
+                        nav('/account')
                     },
                     prefill: {
                         "name": name,

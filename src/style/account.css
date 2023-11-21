@@ -39,7 +39,8 @@
     color: black;
 }
 .chng-pass:hover {
-    background-color:#fbcc41;
+    background-color:#f0ca5a !important;
+    color: black;
 }
 
 .order-table {
@@ -52,6 +53,7 @@
 
 .order-table td {
     padding: 0.4rem;
+    padding-left:0;
 }
 
 .order-table th {

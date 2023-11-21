@@ -1,10 +1,15 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import '../style/account.css'
 import { useNavigate } from 'react-router-dom'
 import OrderCard from './OrderCard';
 import axios from 'axios';
+import { Context } from './ContextData';
 
 export default function Account() {
+    const { mode } = useContext(Context)
+    const dark = "#202124"
+    const light = "#bfbfbf"
+
     const navigate = useNavigate();
     const [orders, setOrders] = useState([]);
     const [payments, setPayments] = useState([]);
@@ -28,7 +33,7 @@ export default function Account() {
     }, [])
 
     return (
-        <div className='account-main'>
+        <div className='account-main' style={{ color: mode && light }}>
             <div className="user-details-main">
                 <h3 className='acc-heading'>User Profile</h3>
                 <hr></hr>
@@ -42,7 +47,7 @@ export default function Account() {
             <div className="order-details-main">
                 <h3>Order History</h3>
                 <hr></hr>
-                <table className="order-table">
+                <table className="order-table" style={{ color: mode && dark }}>
                     <thead>
                         <tr>
                             <th scope="col">Order id</th>
