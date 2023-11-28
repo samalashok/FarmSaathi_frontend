@@ -4,15 +4,19 @@ import { useNavigate } from 'react-router-dom'
 import OrderCard from './OrderCard';
 import axios from 'axios';
 import { Context } from './ContextData';
+import AddressCard from './AddressCard';
 
 export default function Account() {
     const { mode } = useContext(Context)
+    // const dark = "#202124"
+    // const light = "#bfbfbf"
     const dark = "#202124"
-    const light = "#bfbfbf"
-
+    const light = "#cccccc"
+    
     const navigate = useNavigate();
     const [orders, setOrders] = useState([]);
     const [payments, setPayments] = useState([]);
+    const [address, setAddress] = useState([]);
     useEffect(() => {
         if (!localStorage.getItem('authToken')) {
             navigate('/login')
@@ -28,13 +32,18 @@ export default function Account() {
                 arr.sort((a, b) => a.date > b.date ? -1 : 1);
                 setPayments(arr);
             }).catch(err => console.log(err))
+            axios.post('https://farm-saathi-backend.vercel.app/api/getAddress', {
+                email: localStorage.getItem('email')
+            }).then((response) => {
+                setAddress(response.data)
+            }).catch((error) => console.log(error))
         }
         // eslint-disable-next-line
     }, [])
 
     return (
-        <div className='account-main' style={{ color: mode && light }}>
-            <div className="user-details-main">
+        <div className='account-main'>
+            <div className="user-details-main" style={{ backgroundColor: mode && light, color: mode && dark }}>
                 <h3 className='acc-heading'>User Profile</h3>
                 <hr></hr>
                 <div className="profile-main">
@@ -44,7 +53,7 @@ export default function Account() {
                 </div>
                 <button className='chng-pass btn btn-warning'>Change Password</button>
             </div>
-            <div className="order-details-main">
+            <div className="order-details-main" style={{ backgroundColor: mode && light, color: mode && dark }}>
                 <h3>Order History</h3>
                 <hr></hr>
                 <table className="order-table" style={{ color: mode && dark }}>
@@ -75,8 +84,16 @@ export default function Account() {
                     </tbody>
                 </table>
             </div>
-            <div className="address-details-main">
-
+            <div className="address-details-main" style={{ backgroundColor: mode && light, color: mode && dark }}>
+                <h3>Saved Addresses:</h3>
+                <hr></hr>
+                <div className='address-dtl'>
+                    {
+                        address.map((data, i) => {
+                            return <AddressCard key={i} data={data} type={false} />
+                        })
+                    }
+                </div>
             </div>
         </div>
     )

@@ -55,10 +55,9 @@ export default function Login() {
                             <div className="field pass-field">
                                 {seePass ? <i onClick={() => setSeePass(p => !p)} className="fa-solid fa-eye-slash"></i> : <i onClick={() => setSeePass(p => !p)} className="fa-solid fa-eye"></i>}
                                 <input type={seePass ? 'password' : 'text'} onChange={onchange} name="password" value={userDetails.password} placeholder="Password" style={{backgroundColor: mode && light, color: mode && dark}} required />
-                                {/* <i className="fa-solid fa-eye"></i> */}
                             </div>
                             <div className="pass-link">
-                                <Link to="/" style={{ color: mode && light }}>Forgot password?</Link>
+                                <Link to="/forgotpass" style={{ color: mode && light }}>Forgot password?</Link>
                             </div>
                             <button type="submit" class="btn field">Login</button>
                             <div className="signup-link">

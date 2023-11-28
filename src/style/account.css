@@ -67,3 +67,15 @@
 .order-table tbody {
     margin: 1rem;
 }
+
+
+
+.address-details-main{
+    box-shadow: rgba(17, 17, 26, 0.05) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+    border-radius: 1.5rem;
+    padding: 1rem 1.5rem;
+}
+
+.address-dtl{
+    display: flex;
+}

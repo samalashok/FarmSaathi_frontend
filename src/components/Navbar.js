@@ -79,7 +79,7 @@ export default function Navbar() {
                 <NavLink to="/about" style={{ color: mode && light }}>About Us</NavLink>
             </div>
             <div className="mode-div" >
-                <i className="fa-regular fa-sun light-mode-logo"></i>
+                <i className="fa-solid fa-sun light-mode-logo"></i>
                 <label className="switch">
                     <input type="checkbox" onClick={handleMode} />
                     <span className="slider round"></span>

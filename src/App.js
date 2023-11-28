@@ -16,9 +16,10 @@ import Shipping from './components/Shipping';
 import { useContext } from 'react';
 import { Context } from './components/ContextData';
 import Search from './components/Search';
+import Password from './components/Password';
 
 export default function App() {
-  const {mode}=useContext(Context)
+  const { mode } = useContext(Context)
   return (
     <div className='main-div-app' style={{ backgroundColor: mode && "#202124" }}>
       <BrowserRouter>
@@ -82,6 +83,12 @@ export default function App() {
           <Route path='/search' element={
             <>
               <Search />
+            </>
+          }>
+          </Route>
+          <Route path='/forgotpass' element={
+            <>
+              <Password />
             </>
           }>
           </Route>

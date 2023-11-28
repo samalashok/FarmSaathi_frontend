@@ -17,7 +17,7 @@ export default function AddressCard(props) {
                 <h4>{props.data.name.toString().split(' ')[0]}</h4>
                 <p className='add-detail'>{props.data.address1}</p>
                 <h6>{props.data.phone}</h6>
-               {props.isActive?<button type="button" className="btn btn-warning add-btn" disabled>Deliver Here</button>:<button onClick={props.onclick} type="button" className="btn btn-warning add-btn">Deliver Here</button>}
+               {props.type?props.isActive?<button type="button" className="btn btn-warning add-btn" disabled>Deliver Here</button>:<button onClick={props.onclick} type="button" className="btn btn-warning add-btn">Deliver Here</button> :""}
                 <ul className='un-list' style={dot ? { display: 'none' } : { display: 'block' }}>
                     <li>default</li>
                     <hr></hr>

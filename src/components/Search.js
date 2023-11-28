@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useEffect, useState, useContext } from 'react';
 import '../style/products.css'
 import { Context} from './ContextData';
+import { Link } from 'react-router-dom';
 
 export default function Search() {
     const { searchText } = useContext(Context)
@@ -29,7 +30,7 @@ export default function Search() {
                 })}
             </div>
                 <p className='disclaim-prod' style={{ color: mode && light }}><i className="fa-solid fa-circle-exclamation"></i>The price shown above may not be the final price. It's only for getting an idea.</p></> : <div style={{ color: mode && light }}>
-                !!!Type something in the search box or go to home page!!!
+                !!!Type something in the search box or go to <Link to="/">home page</Link>!!!
             </div>}
         </div>
     )

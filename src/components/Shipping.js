@@ -5,23 +5,30 @@ import NewAddress from './NewAddress'
 import '../style/shipping.css'
 import axios from 'axios'
 import { Context, UpdateContext } from './ContextData'
+import { useNavigate } from 'react-router-dom'
 
 export default function Shipping() {
 
+    const navigate = useNavigate()
     const { address } = useContext(Context)
     const { handleSetData, handleAddress } = useContext(UpdateContext)
     useEffect(() => {
-        handleSetData({ data: JSON.parse(localStorage.getItem('carts')) });
-        axios.post('https://farm-saathi-backend.vercel.app/api/getAddress', {
-            email: localStorage.getItem('email')
-        }).then((response) => {
-            handleAddress(response.data)
-        }).catch((error) => console.log(error))
+        if (!localStorage.getItem('authToken')) {
+            navigate('/login')
+        }
+        else {
+            handleSetData({ data: JSON.parse(localStorage.getItem('carts')) });
+            axios.post('https://farm-saathi-backend.vercel.app/api/getAddress', {
+                email: localStorage.getItem('email')
+            }).then((response) => {
+                handleAddress(response.data)
+            }).catch((error) => console.log(error))
+        }
         // eslint-disable-next-line 
     }, [])
 
-    const [active,setActive]=useState(0);
-    const handleActive=(i)=>{
+    const [active, setActive] = useState(0);
+    const handleActive = (i) => {
         // console.log('shipping handle active',i)
         setActive(i)
     }
@@ -37,7 +44,7 @@ export default function Shipping() {
                             <div className="add-cards-low">
                                 {
                                     address.map((data, i) => {
-                                        return <AddressCard key={i} onclick={()=>handleActive(i)} isActive={i===active} data={data} />
+                                        return <AddressCard key={i} onclick={() => handleActive(i)} isActive={i === active} data={data} type={true} />
                                     })
                                 }
                             </div>

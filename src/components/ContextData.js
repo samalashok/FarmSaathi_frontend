@@ -38,8 +38,6 @@ const reducer = (carts, action) => {
             localStorage.setItem('carts', JSON.stringify(newca));
             return [...newca];
         case ACTION.setData:
-            // console.log(action)
-            // console.log(action.data)
             localStorage.setItem('carts', JSON.stringify([...action.data]));
             return [...action.data]
         default:
@@ -79,7 +77,7 @@ export default function ContextData(props) {
         setSearchText(text)
     }
     return (
-        <Context.Provider value={{ carts, address, mode, searchText ,listItem}} >
+        <Context.Provider value={{ carts, address, mode, searchText, listItem }} >
             <UpdateContext.Provider value={{ handleAdd, handleDelete, handleUpdate, handleSetData, handleAddress, handleMode, handleSearch }}>
                 {props.children}
             </UpdateContext.Provider>
