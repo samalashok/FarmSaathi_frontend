@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom'
 export default function ForgotPassword() {
     const [flag, setFlag] = useState(false)
     const [pass, setPass] = useState()
+    const [email, setEmail] = useState()
 
     const resetPass = () => {
-        axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email: localStorage.getitem('email'), password: pass }).then(({ data }) => {
+        axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email: email, password: pass }).then(({ data }) => {
             if (data.success) {
                 alert("password reset successful, You can Login Now!!!")
             }
@@ -17,7 +18,7 @@ export default function ForgotPassword() {
         }).catch((err) => (err))
     }
     const sendOtp = () => {
-        axios.post('https://farm-saathi-backend.vercel.app/auth/forgotPass', { email: localStorage.getitem('email') }).then(({ data }) => {
+        axios.post('https://farm-saathi-backend.vercel.app/auth/forgotPass', { email: email }).then(({ data }) => {
             alert(data.msg)
             if (data.success) {
                 setFlag(true)
@@ -33,11 +34,13 @@ export default function ForgotPassword() {
                     An OTP will be sent to the given email id.
                 </p>
                 <div className="form-outline">
-                    <label className="form-label" for="typeEmail">Email input</label>
-                    <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' />
+                    <label className="form-label" htmlFor="typeEmail">Email input</label>
+                    <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
+                        setEmail(e.target.value);
+                    }} />
                 </div>
                 {flag && <input type="text" className="form-control my-3" placeholder='e.g. 897547' />}
-                {flag && <input type='password' className="form-control my-3" onChange={(e)=>{
+                {flag && <input type='password' className="form-control my-3" onChange={(e) => {
                     setPass(e.target.value);
                 }} name="password" value={pass} placeholder="Password" required />}
                 {flag ? <Link to="" className="btn btn-primary w-100" onClick={resetPass}>Reset password</Link> : <Link to="" className="btn btn-primary w-100" onClick={sendOtp}>Send Otp</Link>}
