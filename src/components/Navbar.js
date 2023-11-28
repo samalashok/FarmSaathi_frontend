@@ -9,7 +9,7 @@ export default function Navbar() {
     const dark = "#202124"
     // const light = "#bfbfbf"
     const light = "#cccccc"
-    console.log('render')
+    // console.log('render')
 
     const navigate = useNavigate();
     const { handleSetData } = useContext(UpdateContext)

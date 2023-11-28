@@ -14,7 +14,7 @@ export default function OrderCard({ data, order, payment }) {
             break;
         }
     }
-    console.log(order)
+    // console.log(order)
     for (let i = 0; i < order.cart_details.length; i++) {
         const o = order.cart_details[i]
         totalq += parseInt(o.quantity)

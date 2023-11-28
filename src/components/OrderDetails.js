@@ -5,7 +5,7 @@ export default function OrderDetails({ or }) {
   const today = new Date();
   const datediff = parseInt((new Date(or.delDate) - new Date()) / (1000 * 60 * 60 * 24))
   let prog={width:"8%"}
-  console.log(datediff)
+  // console.log(datediff)
   if(today>new Date(or.retDate)){
     prog={width:"100%"}
   }

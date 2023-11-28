@@ -67,7 +67,7 @@ export default function ContextData(props) {
 
     const [mode, setMode] = useState(false)
     const handleMode = () => {
-        console.log("changed")
+        // console.log("changed")
         setMode(d => !d)
     }
 

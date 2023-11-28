@@ -17,7 +17,7 @@ export default function Search() {
             setProducts(products.data)
         }).catch((err) => (err))
     }, [])
-    console.log(searchText)
+    // console.log(searchText)
     const { mode } = useContext(Context)
     return (
         <div className='cards'>
