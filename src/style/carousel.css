@@ -1,7 +1,7 @@
 .carousel {
     width: 85%;
-    margin: 0 auto;
-    margin-top: 2rem;
+    margin: 2rem auto;
+    /* margin-top: 2rem; */
 }
 
 .carousel-inner .carousel-item img {
