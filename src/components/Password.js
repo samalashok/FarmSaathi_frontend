@@ -10,13 +10,8 @@ export default function ForgotPassword() {
 
     const resetPass = () => {
         axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
-            if (data.success) {
-                alert(data.msg)
-                Navigate('/login')
-            }
-            else {
-                alert("something went wrong")
-            }
+            alert(data.msg)
+            if (data.success) Navigate('/login')
         }).catch((err) => (err))
     }
     const sendOtp = () => {
@@ -38,7 +33,7 @@ export default function ForgotPassword() {
                 </p>
                 <div className="form-outline">
                     <label className="form-label" htmlFor="typeEmail">Email input</label>
-                    {flag?<input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' readOnly/>:<input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
+                    {flag ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' readOnly /> : <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
                         setEmail(e.target.value);
                     }} />}
                 </div>
