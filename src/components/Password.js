@@ -22,7 +22,7 @@ export default function ForgotPassword() {
     const sendOtp = () => {
         axios.post('https://farm-saathi-backend.vercel.app/auth/forgotPass', { email }).then(({ data }) => {
             alert(data.msg)
-            console.log(data.info)
+            console.log(data.error)
             if (data.success) {
                 setFlag(true)
             }
