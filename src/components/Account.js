@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import '../style/account.css'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate,Link } from 'react-router-dom'
 import OrderCard from './OrderCard';
 import axios from 'axios';
 import { Context } from './ContextData';
@@ -51,7 +51,7 @@ export default function Account() {
                     <p>Email:<span>{localStorage.getItem('email')}</span></p>
                     <p>Phone:<span>{localStorage.getItem('phone')}</span></p>
                 </div>
-                <button className='chng-pass btn btn-warning'>Change Password</button>
+                <Link to="forgotPass" className='chng-pass btn btn-warning'>Change Password</Link>
             </div>
             <div className="order-details-main" style={{ backgroundColor: mode && light, color: mode && dark }}>
                 <h3>Order History</h3>
