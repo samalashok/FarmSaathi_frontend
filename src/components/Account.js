@@ -51,7 +51,7 @@ export default function Account() {
                     <p>Email:<span>{localStorage.getItem('email')}</span></p>
                     <p>Phone:<span>{localStorage.getItem('phone')}</span></p>
                 </div>
-                <Link to="forgotPass" className='chng-pass btn btn-warning'>Change Password</Link>
+                <Link to="/forgotPass" className='chng-pass btn btn-warning'>Change Password</Link>
             </div>
             <div className="order-details-main" style={{ backgroundColor: mode && light, color: mode && dark }}>
                 <h3>Order History</h3>
