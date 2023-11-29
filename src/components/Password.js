@@ -25,8 +25,10 @@ export default function ForgotPassword() {
     }
 
     useEffect(() => {
-        if (localStorage.getItem('authToken'))
+        if (localStorage.getItem('authToken')){
             setUser(true)
+            setEmail(localStorage.getItem('email'))
+        }
     }, [])
     return (
         <div className="forgot-main text-center">
