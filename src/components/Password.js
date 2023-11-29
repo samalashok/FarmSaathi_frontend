@@ -37,7 +37,7 @@ export default function ForgotPassword() {
                 </p>
                 <div className="form-outline">
                     <label className="form-label" htmlFor="typeEmail">Email input</label>
-                    {user ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={JSON.stringify(localStorage.getItem('email'))} readOnly /> : flag ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={email} readOnly /> : <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={email} onChange={(e) => {
+                    {user ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={localStorage.getItem('email')} readOnly /> : flag ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' readOnly /> : <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
                         setEmail(e.target.value);
                     }} />}
                 </div>
