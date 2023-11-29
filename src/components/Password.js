@@ -1,23 +1,22 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link, Navigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function ForgotPassword() {
     const [flag, setFlag] = useState(false)
     const [pass, setPass] = useState()
     const [email, setEmail] = useState()
     const [otp, setOtp] = useState()
-
+    const navigate = useNavigate()
     const resetPass = () => {
-        axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
+        axios.post('http://localhost:5000/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
             alert(data.msg)
-            if (data.success) Navigate('/login')
+            if (data.success) navigate('/login')
         }).catch((err) => (err))
     }
     const sendOtp = () => {
         axios.post('https://farm-saathi-backend.vercel.app/auth/forgotPass', { email }).then(({ data }) => {
             alert(data.msg)
-            console.log(data.error)
             if (data.success) {
                 setFlag(true)
             }
