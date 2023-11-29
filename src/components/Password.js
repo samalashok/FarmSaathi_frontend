@@ -1,5 +1,5 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 export default function ForgotPassword() {
@@ -7,6 +7,7 @@ export default function ForgotPassword() {
     const [pass, setPass] = useState()
     const [email, setEmail] = useState()
     const [otp, setOtp] = useState()
+    const [user, setUser] = useState(false)
     const navigate = useNavigate()
     const resetPass = () => {
         axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
@@ -23,6 +24,10 @@ export default function ForgotPassword() {
         }).catch((err) => (err))
     }
 
+    useEffect(() => {
+        if (JSON.stringify(localStorage.getItem('authToken')))
+            setUser(true)
+    }, [])
     return (
         <div className="forgot-main text-center">
             <div className="card-header h5 text-white bg-primary">Password Reset</div>
@@ -32,7 +37,7 @@ export default function ForgotPassword() {
                 </p>
                 <div className="form-outline">
                     <label className="form-label" htmlFor="typeEmail">Email input</label>
-                    {flag ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' readOnly /> : <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
+                    {user ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={JSON.stringify(localStorage.getItem('email'))} readOnly /> : flag ? <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={email} readOnly /> : <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' value={email} onChange={(e) => {
                         setEmail(e.target.value);
                     }} />}
                 </div>
