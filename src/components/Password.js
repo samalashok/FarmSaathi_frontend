@@ -1,16 +1,18 @@
 import axios from 'axios'
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Navigate } from 'react-router-dom'
 
 export default function ForgotPassword() {
     const [flag, setFlag] = useState(false)
     const [pass, setPass] = useState()
     const [email, setEmail] = useState()
+    const [otp, setOtp] = useState()
 
     const resetPass = () => {
-        axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email: email, password: pass }).then(({ data }) => {
+        axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
             if (data.success) {
-                alert("password reset successful, You can Login Now!!!")
+                alert(data.msg)
+                Navigate('/login')
             }
             else {
                 alert("something went wrong")
@@ -18,7 +20,7 @@ export default function ForgotPassword() {
         }).catch((err) => (err))
     }
     const sendOtp = () => {
-        axios.post('https://farm-saathi-backend.vercel.app/auth/forgotPass', { email: email }).then(({ data }) => {
+        axios.post('https://farm-saathi-backend.vercel.app/auth/forgotPass', { email }).then(({ data }) => {
             alert(data.msg)
             if (data.success) {
                 setFlag(true)
@@ -35,14 +37,16 @@ export default function ForgotPassword() {
                 </p>
                 <div className="form-outline">
                     <label className="form-label" htmlFor="typeEmail">Email input</label>
-                    <input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
+                    {flag?<input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' readOnly/>:<input type="email" id="typeEmail" className="form-control my-3" placeholder='e.g. demo@gmail.com' onChange={(e) => {
                         setEmail(e.target.value);
-                    }} />
+                    }} />}
                 </div>
-                {flag && <input type="text" className="form-control my-3" placeholder='e.g. 897547' />}
+                {flag && <input type="text" value={otp} className="form-control my-3" placeholder='enter otp' onChange={(e) => {
+                    setOtp(e.target.value);
+                }} />}
                 {flag && <input type='password' className="form-control my-3" onChange={(e) => {
                     setPass(e.target.value);
-                }} name="password" value={pass} placeholder="Password" required />}
+                }} name="password" value={pass} placeholder="new password" required />}
                 {flag ? <Link to="" className="btn btn-primary w-100" onClick={resetPass}>Reset password</Link> : <Link to="" className="btn btn-primary w-100" onClick={sendOtp}>Send Otp</Link>}
                 <div className="d-flex justify-content-between mt-4">
                     <Link to="/login">Login</Link>

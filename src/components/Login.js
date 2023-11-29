@@ -36,7 +36,7 @@ export default function Login() {
                 }).catch(err => (err))
                 navigate('/');
             }
-        }).catch((err) => alert(err));
+        }).catch((err) => console.log(err));
     }
 
     return (
