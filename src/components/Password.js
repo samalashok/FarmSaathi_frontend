@@ -25,7 +25,7 @@ export default function ForgotPassword() {
     }
 
     useEffect(() => {
-        if (JSON.stringify(localStorage.getItem('authToken')))
+        if (localStorage.getItem('authToken'))
             setUser(true)
     }, [])
     return (
