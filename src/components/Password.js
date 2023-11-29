@@ -9,7 +9,7 @@ export default function ForgotPassword() {
     const [otp, setOtp] = useState()
     const navigate = useNavigate()
     const resetPass = () => {
-        axios.post('http://localhost:5000/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
+        axios.post('https://farm-saathi-backend.vercel.app/auth/verifyOtp', { email, otp, password: pass }).then(({ data }) => {
             alert(data.msg)
             if (data.success) navigate('/login')
         }).catch((err) => (err))
